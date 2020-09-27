@@ -14,35 +14,59 @@ def user_input(givenchoice):
         else:
             return given
 
-def checkinarray(arr,k,arr1):
-    sum1,sum2,sum3=0,0,0
-    max = arr[0]
+sum1 = 0
+
+def max(arr,k):
+
+
+    global sum1
+    max1 = arr[0]
 
     for i in range(0, len(arr)):
-        if arr[i] > max:
-            max = arr[i]
+        if arr[i] > max1:
+            max1 = arr[i]
 
-    if (max == k):
-        sum1+=1
+    if (max1 == k):
+        sum1 += 1
         print("k is max in array x")
     else:
         print("k is not max in array x")
 
+sum2 = 0
+def checkinarray(arr,k):
+ try:
+    global sum2
+    h = int(len(arr) / 2)
 
-    indice= arr.index(k)
-    h=int(len(arr)/2)
-    if(indice<h):
-        sum2+=1
-        print("k is in first part of array x")
+    indice = arr.index(k)
+
+    for i in arr:
+        if (i == k):
+            print(" k Element Exists in array x")
+
+    if (indice < h):
+     sum2 += 1
+     print("k is in first part of array x")
     else:
         print("k is not in first part of array x")
+ except ValueError:
+    print("k is not in the array ")
 
-    for i in arr1: 
+sum3 = 0
+sum = 0
+
+def finalcalculation(arr,arr1,k):
+ try:
+    global sum3
+    global sum
+    indice = arr.index(k)
+
+    for i in arr1:
         if (i > 0):
-         sum3+=1
+         sum3 += 1
 
+    sum = sum1+sum2
 
-    sum=sum1+sum2
     if (sum == 2 and sum3 == 0):
         print("confitions aligned so array x elements befor k will be rasised to their cube :")
         for i in range(0,indice):
@@ -51,6 +75,8 @@ def checkinarray(arr,k,arr1):
         print("sorry the conditions didnt align so array x dosent change :")
 
     print("Array x :", arr)
+ except ValueError:
+     print("k is not in the array so we cannot continue ")
 
 while True:
     print('''welcome user !!!!
@@ -79,7 +105,9 @@ while True:
         print("thank you for your time!!!!!")
         break
 
-    checkinarray(arr,k,arr1)
+    checkinarray(arr, k)
+    max(arr, k)
+    finalcalculation(arr,arr1,k)
 
 
 
