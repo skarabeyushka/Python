@@ -15,18 +15,16 @@ def is_perfect(n):
 
 try:
 
- min_value = int(input('Enter positive minimum value: '))
- if(min_value<0):
-  min_value = int(input('Enter positive minimum value: '))
-
+ min_value = int(input('Enter  minimum value: '))
+ if (min_value < 0):
+     min_value = int(input('Enter positive minimum value: '))
  max_value = int(input('Enter maximum value: '))
-
 except ValueError:
-    print("please enter a number ")
-    min_value = int(input('Enter minimum value: '))
-    if (min_value < 0):
-        min_value = int(input('Enter positive minimum value: '))
-    max_value = int(input('Enter maximum value: '))
+ print("please enter a number ")
+ min_value = int(input('Enter  minimum value: '))
+ if (min_value < 0):
+     min_value = int(input('Enter positive minimum value: '))
+ max_value = int(input('Enter maximum value: '))
 
 
 print('Perfect numbers from %d to %d are:' % (min_value, max_value))
