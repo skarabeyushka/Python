@@ -20,25 +20,43 @@ def solve(low, high, cubes):
             low = mid + 1
     return -1
 
+
 try:
  cubes =input("please enter number of cubes to use :\n")
  cubes = int(cubes)
+ if(cubes<100):
+     steps = solve(1, cubes, 2 * cubes)
+     print("Number of stair steps = ", steps)
+ if cubes > 100:
+
+   cubes = input("please enter number less than 100 :")
+   cubes = int(cubes)
+   steps = solve(1, cubes, 2 * cubes)
+   print("Number of stair steps1 = ", steps)
+
+ if(cubes<0):
+     print("please enter positive number")
+     cubes = input("please enter number of cubes to use :\n")
+     cubes = int(cubes)
+     steps = solve(1, cubes, 2 * cubes)
+     print("Number of stair steps = ", steps)
+
+
+
 except ValueError:
  print("enter a number")
  cubes = input("please enter number of cubes to use :\n")
  cubes=int(cubes)
-
-
- if cubes > 100:
-
-    newcubes = input("please enter number less than 100 :")
-    newcubes=int(newcubes)
-    steps1 = solve(1, newcubes, 2 * newcubes)
-    print("Number of stair steps = ", steps1)
-
- else :
+ if (cubes < 0):
+     print("please enter positive number")
+     cubes = input("please enter number of cubes to use :\n")
+     cubes = int(cubes)
      steps = solve(1, cubes, 2 * cubes)
      print("Number of stair steps = ", steps)
+ else:
+     steps = solve(1, cubes, 2 * cubes)
+     print("Number of stair steps = ", steps)
+
 
 
 
