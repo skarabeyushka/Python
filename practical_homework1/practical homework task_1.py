@@ -1,23 +1,22 @@
-def solve(low, high, cubes):
-    while low <= high:
-        mid = int((low + high) / 2)
+def numberofvariants(n,max):
+    res = 1
+    for i in range(n-1,min_at_bottom(n)-1,-1):
+        if(i>=max):
+            res = 0
+            continue
+        res+=numberofvariants(n-i,i)
+        if((n-i)==i):
+            res-=1
+    return res
 
-
-        if (mid * (mid + 1)) == cubes:
-            return mid
-
-
-        if (mid > 0 and (mid * (mid + 1)) > cubes
-                and (mid * (mid - 1)) <= cubes):
-            return mid - 1
-
-
-        if (mid * (mid + 1)) > cubes:
-            high = mid - 1;
-
-
-        else:
-            low = mid + 1
+def min_at_bottom(n):
+    if(n==1 or n==2):
+        return n
+    tmp = 0
+    for i in range(1,n,1):
+        tmp+=i
+        if (tmp>=n):
+            return i
     return -1
 
 
@@ -25,20 +24,20 @@ try:
  cubes =input("please enter number of cubes to use :\n")
  cubes = int(cubes)
  if(cubes<100):
-     steps = solve(1, cubes, 2 * cubes)
+     steps = numberofvariants( cubes,  cubes)
      print("Number of stair steps = ", steps)
  if cubes > 100:
 
    cubes = input("please enter number less than 100 :")
    cubes = int(cubes)
-   steps = solve(1, cubes, 2 * cubes)
+   steps = numberofvariants(cubes,  cubes)
    print("Number of stair steps1 = ", steps)
 
  if(cubes<0):
      print("please enter positive number")
      cubes = input("please enter number of cubes to use :\n")
      cubes = int(cubes)
-     steps = solve(1, cubes, 2 * cubes)
+     steps = numberofvariants( cubes,  cubes)
      print("Number of stair steps = ", steps)
 
 
@@ -51,10 +50,10 @@ except ValueError:
      print("please enter positive number")
      cubes = input("please enter number of cubes to use :\n")
      cubes = int(cubes)
-     steps = solve(1, cubes, 2 * cubes)
+     steps = numberofvariants(cubes, cubes)
      print("Number of stair steps = ", steps)
  else:
-     steps = solve(1, cubes, 2 * cubes)
+     steps = numberofvariants( cubes, cubes)
      print("Number of stair steps = ", steps)
 
 
