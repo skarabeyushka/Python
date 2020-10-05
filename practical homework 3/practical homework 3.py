@@ -72,23 +72,19 @@ class LinkedList:
         return " ".join(n)
 
 
-    sum=0
+
     def search(self, x):
-        global sum
+
+         sum = 0
+
+         current = self.head
 
 
-
-
-        current = self.head
-
-
-        while current != None:
+         while current != None:
             if current.data == x:
                 sum=+1
-
-
             current = current.next
-        return sum
+         return sum
 
     def find_index(self, key):
         return self.find_index_helper(key, 0, self.head)
@@ -103,13 +99,14 @@ class LinkedList:
             return self.find_index_helper(key, start + 1, node.next)
 
     def largestElement(self, x):
-        sum1=0
-        max=-58
-
-
-
-
+        sum=0
         n = self.head
+        max= n.data
+
+
+
+
+        
 
 
         while (n != None):
@@ -119,24 +116,24 @@ class LinkedList:
             n = n.next
 
         if(max==x):
-            sum1+=1
+            sum+=1
             print("k is max ")
         else:
             print("k is not max")
-            sum1+=0
-        return sum1
+            sum+=0
+        return sum
 
     def ispositive(self):
-        sum3=0
+        sum=0
 
         n = self.head
 
         while (n != None):
             if (n.data > 0):
-                sum3+=1
+                sum+=1
 
             n = n.next
-        return sum3
+        return sum
 
     def replace(self, index):
 
@@ -160,30 +157,6 @@ while True:
         k = user_input("k")
         print("linked list x :",linked_list.__repr__())
         print("linked list x :",linked_list1.__repr__())
-        linked_list.largestElement(k)
-        if (linked_list.search(k)==1):
-            print("k is in linked list x")
-        else:
-            print("k is not in linked list x")
-        if (linked_list1.ispositive()==0):
-            print("linked list y is  negative ")
-        else:
-            print("linked list y is not negative ")
-
-        sum=0;
-        index=linked_list.find_index(k)
-        sum=linked_list.largestElement(k)+linked_list.search(k)+linked_list1.ispositive()
-        if (sum==2):
-            linked_list.replace(index)
-            print(linked_list.__repr__())
-
-
-
-
-
-
-
-
     elif userchoice == 2:
         n = user_input("n")
         print("You need to input a i b for range of elements: ")
@@ -195,26 +168,24 @@ while True:
         print("linked list x :",linked_list.__repr__() )
         print("linked list  y :",linked_list1.__repr__())
 
-        linked_list.largestElement(k)
-        if (linked_list.search(k) == 1):
-            print("k is in linked list x")
-        else:
-            print("k is not in linked list x")
-        if (linked_list1.ispositive() == 0):
-            print("linked list y is  negative ")
-        else:
-            print("linked list y is not  negative ")
-
-        sum = 0;
-        index = linked_list.find_index(k)
-        sum = linked_list.largestElement(k) + linked_list.search(k) + linked_list1.ispositive()
-        if (sum == 2):
-            linked_list.replace(index)
-            print(linked_list.__repr__())
-
     else:
         print("thank you for your time!!!!!")
         break
 
+    linked_list.largestElement(k)
+    if (linked_list.search(k) == 1):
+        print("k is in linked list x")
+    else:
+        print("k is not in linked list x")
+    if (linked_list1.ispositive() == 0):
+        print("linked list y is  negative ")
+    else:
+        print("linked list y is not  negative ")
 
+    sum = 0;
+    index = linked_list.find_index(k)
+    sum = linked_list.largestElement(k) + linked_list.search(k) + linked_list1.ispositive()
+    if (sum == 2):
+        linked_list.replace(index)
+        print(linked_list.__repr__())
 
