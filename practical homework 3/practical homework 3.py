@@ -156,7 +156,7 @@ while True:
         linked_list1 = LinkedList(user_input("linked_list"))
         k = user_input("k")
         print("linked list x :",linked_list.__repr__())
-        print("linked list x :",linked_list1.__repr__())
+        print("linked list y :",linked_list1.__repr__())
     elif userchoice == 2:
         n = user_input("n")
         print("You need to input a i b for range of elements: ")
