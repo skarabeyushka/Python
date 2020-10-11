@@ -1,4 +1,4 @@
-from random import randint
+
 
 def user_input(givenchoice):
     while True:
