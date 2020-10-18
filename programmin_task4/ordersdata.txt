@@ -1,0 +1,4 @@
+1;paid;210;60%;2020-10-03;2020-10-15;charge.haj111@gmail.com
+2;refunded;120;30%;2020-10-07;2020-10-17;cahrbel.haj111@outcolook.com
+3;notpaid;320;30%;2020-09-07;2020-09-27;cahrbel.hajj221@outcolook.com
+4;refunded;450;70%;2020-08-11;2020-08-14;vitaly.koziak121@hotmail.com
