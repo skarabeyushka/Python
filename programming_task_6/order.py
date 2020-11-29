@@ -80,29 +80,3 @@ class Orders:
 
 
 
-    def edit(self, val, file, id):
-        arg = val.split()
-        if len(arg) != 7:
-            print('Not all arguments were inputedd')
-            return
-        obj = OnlineOrder(arg)
-        if obj.exist():
-            if arg[0] != id:
-                arg[0] = id
-                print('You typed another id, it was ignored')
-            if len(self.orders) > 1:
-                for i in range(len(self.orders)):
-                    if self.orders[i].get_field('id') == int(id):
-                        self.orders[i] = obj
-            self.rewrite_file(file)
-
-    def fill_list_from_file(self, file):
-        f = open(file, 'r')
-        input_lines = f.readlines()
-        for line in input_lines:
-            if len(line.split()) != 7:
-                print('Not all arguments were uploaded')
-            else:
-                self.add(line, file, 'file')
-        print('Well done!')
-        return self
