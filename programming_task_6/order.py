@@ -80,13 +80,3 @@ class Orders:
 
 
 
-    def fill_list_from_file(self, file):
-        f = open(file, 'r')
-        input_lines = f.readlines()
-        for line in input_lines:
-            if len(line.split()) != 7:
-                print('Not all arguments were uploaded')
-            else:
-                self.add(line, file, 'file')
-        print('Well done!')
-        return self
