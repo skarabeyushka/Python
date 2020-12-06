@@ -75,7 +75,7 @@ def countprimeee(linked_list: LinkedList):
 
 while True:
     print('''Choose option:
-    1.)first Strategy for adding in list
+    1.) first Strategy for adding in list
     2.) second Strategy for adding in list
     3.) Generating data for the list 
     4.) Delete element by position
