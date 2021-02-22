@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Text;
 using System.IO;
@@ -29,7 +29,7 @@ namespace Task_1
                 string value = "";
                 if (userchoice.All(char.IsDigit) == false)
                 {
-                    Console.WriteLine("please enter a number mentioned above!");
+                    Console.WriteLine("please enter a valid number from  above!");
                     continue;
                 }
                 if (Int32.Parse(userchoice) >= 1 && Int32.Parse(userchoice) < 5)
@@ -37,37 +37,37 @@ namespace Task_1
                     Console.WriteLine("Type value: ");
                     value = Console.ReadLine();
                 }
-                if (userchoice == "1")
+                switch (userchoice)
                 {
-                    ls.Search(value);
-                }
-                else if (userchoice == "2")
-                {
-                    ls.Sort(value);
-                }
-                else if (userchoice == "3")
-                {
-                    ls.Remove(value, file_name);
-                }
-                else if (userchoice == "4")
-                {
-                    ls.AddTo(value, file_name);
-                }
-                else if (userchoice == "5")
-                {
-                    Console.WriteLine("Type id:");
-                    string id = Console.ReadLine();
-                    Console.WriteLine("Type value: ");
-                    value = Console.ReadLine();
-                    ls.Edit(id, value, file_name);
-                }
-                else if (userchoice == "6")
-                {
-                    ls.Print();
-                }
-                else
-                {
-                    break;
+                    case "1":
+                         ls.Search(value);
+                        break;
+                    case "2":
+                        ls.Sort(value);
+                        break;
+                    case "3":
+
+                        ls.Remove(value, file_name);
+                        break;
+                    case "4":
+                        ls.AddTo(value, file_name);
+                        break;
+                    case "5":
+                        Console.WriteLine("Type id:");
+                        string id = Console.ReadLine();
+                        Console.WriteLine("Type value: ");
+                        value = Console.ReadLine();
+                        ls.Edit(id, value, file_name);
+                        break;
+                    case "6":
+                        ls.Print();
+                        break;
+                    case "7":
+                        break;
+
+
+
+
                 }
             }
         }
