@@ -7,10 +7,7 @@ using System.Threading.Tasks;
 
 namespace Task_1
 {
-    public class ListOfFields
-    {
-        public static String[] fields = { "id", "order_status", "amount", "discount", "order_date", "shipped_date", "customer_email" };
-    }
+    
     public class OnlineOrder
     {
         string id;
